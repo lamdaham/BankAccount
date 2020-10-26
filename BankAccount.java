@@ -17,4 +17,13 @@ public class BankAccount {
 		return (accountID[0]);
 	}
 
+	public boolean deposit(double amount) {
+		if (0 < amount) {
+			balance += amount;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
