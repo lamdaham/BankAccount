@@ -23,6 +23,10 @@ public class BankAccount {
 		return (accountID);
 	}
 
+	public String getPass() {
+		return (password);
+	}
+
 	//Reset Password
 	public void setPassword(String newPass) {
 		password = newPass;
@@ -41,7 +45,7 @@ public class BankAccount {
 
 	//Withdraws from Balance
 	public boolean withdraw(double amount) {
-		if (amount <= balance) {
+		if (amount <= balance && amount>=0) {
 			balance -= amount;
 			return true;
 		} else {
