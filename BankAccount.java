@@ -5,8 +5,8 @@ public class BankAccount {
 	private String password;
 
 	//constructors
-	public BankAccount(double b, int[] a, String p) {
-		balance = b;
+	public BankAccount(int a, String p) {
+		balance = 0;
 		accountID = a;
 		password = p;
 	}
@@ -23,6 +23,10 @@ public class BankAccount {
 		return (accountID);
 	}
 
+	//Reset Password
+	public void setPassword(String newPass) {
+		password = newPass;
+	}
 
 	//Deposits into Balance
 	public boolean deposit(double amount) {
