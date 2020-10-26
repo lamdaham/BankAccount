@@ -1,7 +1,7 @@
 public class BankAccount {
 	//initialize
 	private double balance;
-	private int[] accountID = new int[2];
+	private int accountID;
 	private String password;
 
 	//constructors
@@ -20,7 +20,7 @@ public class BankAccount {
 
 	//Returns AccountID
 	public int getAccountID() {
-		return (accountID[0]);
+		return (accountID);
 	}
 
 
@@ -48,7 +48,7 @@ public class BankAccount {
 
 	//Returns Account Info
 	public String toString() {
-		return String.valueOf(accountID[0])+"\t"+String.valueOf(balance);
+		return String.valueOf(accountID)+"\t"+String.valueOf(balance);
 	}
 
 }
