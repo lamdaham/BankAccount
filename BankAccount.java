@@ -7,8 +7,13 @@ public class BankAccount {
 	//constructors
 	public BankAccount(int a, String p) {
 		balance = 0;
-		accountID = a;
-		password = p;
+		this.accountID = a;
+		this.password = p;
+	}
+
+
+	private boolean authenticate(String password) {
+		return (password.equals(this.password));
 	}
 
 
@@ -54,9 +59,20 @@ public class BankAccount {
 	}
 
 
+	public boolean transferTo(BankAccount other, double amount, String password) {
+		if (password.equals(this.password) && withdraw(amount)) {
+			other.deposit(amount);
+			//System.out.println("Success. Transfered $" + amount + " to "+ getAccountID());
+		} else {
+			System.out.println("Error");
+		}
+		return false;
+	}
+
+
 	//Returns Account Info
 	public String toString() {
-		return String.valueOf(accountID)+"\t"+String.valueOf(balance);
+		return "#"+String.valueOf(accountID)+"\t$"+String.valueOf(balance);
 	}
 
 }
