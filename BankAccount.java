@@ -62,9 +62,8 @@ public class BankAccount {
 	public boolean transferTo(BankAccount other, double amount, String password) {
 		if (password.equals(this.password) && withdraw(amount)) {
 			other.deposit(amount);
+			return true;
 			//System.out.println("Success. Transfered $" + amount + " to "+ getAccountID());
-		} else {
-			System.out.println("Error");
 		}
 		return false;
 	}
@@ -72,7 +71,7 @@ public class BankAccount {
 
 	//Returns Account Info
 	public String toString() {
-		return "#"+String.valueOf(accountID)+"\t$"+String.valueOf(balance);
+		return String.valueOf(accountID)+"\t"+String.valueOf(balance);
 	}
 
 }
